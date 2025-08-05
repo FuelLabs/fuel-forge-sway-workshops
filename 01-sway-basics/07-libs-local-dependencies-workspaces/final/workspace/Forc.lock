@@ -1,0 +1,25 @@
+[[package]]
+name = "count"
+source = "member"
+dependencies = [
+    "std",
+    "std_ext",
+]
+
+[[package]]
+name = "counter"
+source = "member"
+dependencies = [
+    "count",
+    "std",
+]
+
+[[package]]
+name = "std"
+version = "0.69.1"
+source = "registry+std?0.69.1#QmbPunScay4xpfHKpxQ71dFKXSiyJuPP8P8YhgX5Dkmzm9!"
+
+[[package]]
+name = "std_ext"
+source = "member"
+dependencies = ["std"]

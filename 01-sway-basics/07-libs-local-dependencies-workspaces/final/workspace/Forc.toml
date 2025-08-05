@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "std_ext",
+    "count",
+    "contract",
+]

@@ -1,7 +1,3 @@
-// Additional exercises:
-// - Implement a `dec` and `reset` contract methods for decreasing and resetting the counter to zero, respectively.
-// - Implement additional test cases. E.g., `inc_increases_counter_for_one`.
-
 contract;
 
 abi Counter {

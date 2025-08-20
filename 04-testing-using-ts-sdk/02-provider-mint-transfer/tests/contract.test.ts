@@ -23,8 +23,8 @@ describe('Minting and transferring', () => {
     const initial_balance = await contract.getBalance(default_asset_id);
     expect(initial_balance.toNumber()).toBe(0);
 
-    const { waitForResult: mint_default_asset } = await contract.functions.mint_default_asset(10_000).call();
-    await mint_default_asset();
+    const { waitForResult: mintDefaultAsset } = await contract.functions.mint_default_asset(10_000).call();
+    await mintDefaultAsset();
 
     const new_balance = await contract.getBalance(default_asset_id);
     expect(new_balance.toNumber()).toBe(10_000);
@@ -35,8 +35,8 @@ describe('Minting and transferring', () => {
     expect(user_initial_balance.toNumber()).toBe(0);
 
     const user_identity = { Address: { bits: userWallet.address.b256Address } };
-    const { waitForResult: transfer_default_asset_to } = await contract.functions.transfer_default_asset_to(user_identity, 4422).call();
-    await transfer_default_asset_to();
+    const { waitForResult: transferDefaultAssetTo } = await contract.functions.transfer_default_asset_to(user_identity, 4422).call();
+    await transferDefaultAssetTo();
 
     const user_new_balance = await userWallet.getBalance(default_asset_id);
     expect(user_new_balance.toNumber()).toBe(4422);

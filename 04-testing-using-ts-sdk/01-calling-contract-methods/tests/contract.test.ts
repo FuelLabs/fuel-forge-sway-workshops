@@ -18,8 +18,8 @@ describe('Calling contract methods', () => {
       contracts: [contract],
     } = testNode;
 
-    const { waitForResult: nonPayableCallWaitForResult } = await contract.functions.non_payable_call().call();
-    const { value: callInfo } = await nonPayableCallWaitForResult();
+    const { waitForResult: nonPayableCall } = await contract.functions.non_payable_call().call();
+    const { value: callInfo } = await nonPayableCall();
 
     console.log(callInfo);
 
@@ -51,14 +51,14 @@ describe('Calling contract methods', () => {
 
     contract.account = userWallet;
 
-    const { waitForResult: payableCallWaitForResult } = await contract
+    const { waitForResult: payableCall } = await contract
       .functions
       .payable_call()
       .callParams({
         forward: [4422, TestAssetId.A.value],
       })
       .call();
-    const { value: callInfo } = await payableCallWaitForResult();
+    const { value: callInfo } = await payableCall();
 
     console.log(callInfo);
 
